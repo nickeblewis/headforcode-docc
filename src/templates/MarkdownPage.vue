@@ -8,10 +8,10 @@
 
         <div class="order-1 w-full md:w-2/3">
           <div class="content" v-html="$page.markdownPage.content" />
-
           <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
             <NextPrevLinks />
           </div>
+          <div class="">All material &copy; Nick Lewis 2020</div>
         </div>
 
       </div>

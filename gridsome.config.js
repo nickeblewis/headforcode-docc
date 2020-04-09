@@ -4,6 +4,27 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+var embedConfig = {
+  'enabledProviders': ['Youtube', 'Vimeo', 'Gist', 'Codepen', 'JSFiddle', 'Giphy'], 
+  'Youtube': {
+    template: './src/embedTemplates/Youtube.hbs',
+  },
+  'Vimeo': {
+    template: './src/embedTemplates/Vimeo.hbs',
+  },
+  'Giphy': {
+    template: './src/embedTemplates/Giphy.hbs',
+  },
+  'JSFiddle': {
+    template: './src/embedTemplates/JSFiddle.hbs',
+    secureConnection: true
+  },
+  'Codepen': {
+    template: './src/embedTemplates/Codepen.hbs',
+  },
+
+};
+
 module.exports = {
   siteName: 'H4C',
   icon: {
@@ -55,7 +76,8 @@ module.exports = {
           externalLinksTarget: '_blank',
           externalLinksRel: ['noopener', 'noreferrer'],
           plugins: [
-            '@gridsome/remark-prismjs'
+            '@gridsome/remark-prismjs',
+            ['@noxify/gridsome-plugin-remark-embed', embedConfig]
           ]
         }
       }
